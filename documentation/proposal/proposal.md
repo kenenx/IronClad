@@ -3,13 +3,21 @@
 
 ## Description and Context
 
-Ironclad is a  weight training workout tracker that utilises AI to address key problems individuals faces when planning their workouts in the gym. 
-Ironclad will be able to save workout templates made by the user in the app to generate individual workouts which will store exercises, sets, reps as well as the date and the RPE (Rated Perceived Exertion) of the workout.
-This allows users to stay organised to ensure their training is effective as possible.  
+Ironclad is a  weight training workout tracker that utilises AI to address  key challenges individuals faces when planning their workouts in the gym.  
 
-For users who do not have a workout plan for themselves, Ironclad will utilise the OpenAI API to generate workouts for these users. This addresses an important problem of individuals new to fitness, as they often do not know where to begin.  
+Ironclad allows users to save workout templates that can generate specific workout sessions. These sessions are made by the user in the app and included detailed information such as exercises, sets, reps as well as the date and the RPE (Rated Perceived Exertion) of each workout.
+This helps users to stay organised to ensure their training is effective as possible.  
 
-A potential feature of Ironclad is to use OpenAI API to generate a new workout for a user based on a previous one they have logged in the app. This will help intermediate and advanced users to continue to progressively overload avoid stagnation in their training.
+For users without a workout plan, Ironclad will utilise the OpenAI API to generate workouts customised workouts. This addresses an important challenge for beginners who might not know how to start their fitness journey.
+
+A potential advanced feature of Ironclad is to use OpenAI API to generate a new workout for a user based on previously logged sessions. This will help intermediate and advanced users to avoid stagnation by continually adjusting their routines for progressive overload.
+
+The need for Ironclad arises from several common issues in weight training and fitness planning:
+
+1. **Organisation**: Keeping track of workout details such as exercises, sets, reps and progress over time is important to optimise workouts however can be cumbersome without a proper system.
+2. **Lack of Knowledge**: Beginners often do now know how to create effective workout plans which are appropriate for their goals and fitness levels.
+3. **Personalization**: Most workout plans do not consider individual differences in fitness levels, available equipment and personal goals, leading to suboptimal training routines and outcomes.
+4. **Progressive Overload**: For advanced users, continuously adjusting their workouts to ensure progressive overload can be challenging without a structured approach.
 
 The following code is an example of the code that could be used with OpenAI API to generate workouts. 
 
@@ -128,9 +136,9 @@ This would return a json object of a workout that would be stored on the databas
 
 ### MVP
 
-- A user will be able to register and login
-- A user will be able to make workout templates
-- A user will be able to use a template to track an individual workout
+- A user will be able to register and login to access their personalised workout data.
+- A user will be able to create and save workout templates
+- A user will be able to use a template to track specific workout sessions.
 - A user will be able to view their previously completed workouts.
 - A user will be able to use AI to generate a workout based on their weight, gender, goals, available equipment and experience level.
 - An Admins will be able to create default workout templates
@@ -145,7 +153,7 @@ This would return a json object of a workout that would be stored on the databas
 
 ## User Interface
 --------------------------
-Ironclad will be designed for small screen devices and it is expected to be used on users phones in the gym.
+Ironclad will be optimised for small screen devices as it is expected to be used on users phones in the gym. The user interface will be intuitive and user-friendly, with the navbar at the bottom so it is easy to reach with users' thumbs, ensuring ease of use during workout sessions.
 
 ![Wireframes](.\img\ironcladwireframe1.PNG)
 
