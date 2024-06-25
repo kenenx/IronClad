@@ -88,7 +88,7 @@ The following code is an example of the code that could be used with OpenAI API 
 }
 ```
 
-![OpenAI function](.\img\openaifunction.PNG)
+![OpenAI function](openaifunction.PNG)
 
 This would return a json object of a workout that would be stored on the database of the server when confirmed by the user so the user can track their workouts.
 
@@ -155,14 +155,14 @@ This would return a json object of a workout that would be stored on the databas
 --------------------------
 Ironclad will be optimised for small screen devices as it is expected to be used on users phones in the gym. The user interface will be intuitive and user-friendly, with the navbar at the bottom so it is easy to reach with users' thumbs, ensuring ease of use during workout sessions.
 
-![Wireframes](.\img\ironcladwireframe1.PNG)
+![Wireframes](ironcladwireframe1.png)
 
 ## Architecture
 --------------------
 The user and admins will interact with a React front end web application.
 This will communicate with a back end express server which sends data to a mongodb database as well as acting as a proxy for the OpenAI API
 
-![Architecture diagram](.\img\architecture.jpg)
+![Architecture diagram](architecture.jpg)
 
 ## Routing
 -------------------
