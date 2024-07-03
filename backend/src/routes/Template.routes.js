@@ -21,7 +21,7 @@ export default class TemplateRoutes {
     this.#router.put("/", this.#controller.updateTemplate);
     this.#router.delete("/", this.#controller.deleteTemplate);
     this.#router.get("/:id", this.#controller.getTemplate);
-    this.#router.get("/", this.#controller.getTemplates);git 
+    this.#router.get("/", this.#controller.getTemplates);
 
   };
 
