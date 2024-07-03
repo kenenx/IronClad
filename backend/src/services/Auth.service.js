@@ -28,5 +28,16 @@ export default class AuthService {
     }
   }
 
+  getUser = async ( username ) => {
+    try {
+      console.log( username, 'service')
+      const user = await User.findOne({ username }).select("-password");
+      return user;
+    } catch (e) {
+      throw new Error(e);
+    }
+  }
+
+
   
 }

@@ -33,9 +33,11 @@ export default class AuthController {
     }
   };
 
-  getProfile = async (req, res) => {
+  getUser = async (req, res) => {
     try {
-      const user = await this.#authService.getProfile(req.id);
+      const username = req.params.user;
+      console.log( username, 'controller')
+      const user = await this.#authService.getUser(username);
       res.status(200).send({ user });
     } catch (error) {
       res.status(401).send({ message: error.message });

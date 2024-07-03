@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import AuthController from '../controllers/Auth.controller.js';
-import AuthMiddleware from '../middleware/Auth.middleware.js';
+// import AuthMiddleware from '../middleware/Auth.middleware.js';
 
 export default class AuthRoutes {
   #router;
@@ -16,6 +16,7 @@ export default class AuthRoutes {
   #initialiseRoutes = () => {
     this.#router.post("/register", this.#controller.register);
     this.#router.post("/login", this.#controller.login);
+    this.#router.get("/:user", this.#controller.getUser);
   };
 
   getRouter = () => {
