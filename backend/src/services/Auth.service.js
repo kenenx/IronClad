@@ -13,7 +13,7 @@ export default class AuthService {
     } catch (error) {
       throw new Error("Registration failed", error.message);
     }
-  } 
+  }
 
   login = async ({ username, password }) => {
     try {
@@ -28,9 +28,8 @@ export default class AuthService {
     }
   }
 
-  getUser = async ( username ) => {
+  getUser = async (username) => {
     try {
-      console.log( username, 'service')
       const user = await User.findOne({ username }).select("-password");
       return user;
     } catch (e) {
@@ -38,6 +37,24 @@ export default class AuthService {
     }
   }
 
+  updateUser = async (username, data) => {
+    try {
+      console.log(username, data);
+      const user = await User.findOneAndUpdate({ username }, data, {
+        new: true,
+      });
+      return user;
+    } catch (e) {
+      throw new Error(e);
+    }
+  }
 
-  
+  deleteUser = async (username) => {
+    try {
+      const user = await User.findOneAndDelete({ username });
+      return `${user} has been deleted`;
+    } catch (e) {
+      throw new Error(e);
+    }
+  }
 }

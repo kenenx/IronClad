@@ -36,11 +36,21 @@ export default class AuthController {
   getUser = async (req, res) => {
     try {
       const username = req.params.user;
-      console.log( username, 'controller')
       const user = await this.#authService.getUser(username);
       res.status(200).send({ user });
     } catch (error) {
       res.status(401).send({ message: error.message });
+    }
+  };
+
+  updateUser = async (req, res) => {
+    try {
+      const username = req.body.username;
+      const data = req.body;
+      const user = await this.#authService.updateUser(username, data);
+      res.status(200).send({ user });
+    } catch (error) {
+      res.status(400).send({ message: error.message });
     }
   };
 }
