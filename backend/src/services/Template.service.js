@@ -21,4 +21,13 @@ export default class TemplateService {
       throw new Error(e);
     }
   };
+
+  deleteTemplate = async (id) => {
+    try {
+      const template = await Template.findByIdAndDelete(id);
+      return `${template.name} has been deleted`;
+    } catch (e) {
+      throw new Error(e);
+    }
+  };
 }

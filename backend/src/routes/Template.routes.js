@@ -19,6 +19,8 @@ export default class TemplateRoutes {
     this.#router.post("/", this.#controller.createTemplate);
     // this.#router.post("/", this.#authMiddleware.verify, this.#controller.createTemplate);
     this.#router.put("/", this.#controller.updateTemplate);
+    this.#router.delete("/", this.#controller.deleteTemplate);
+
   };
 
   getRouter = () => {

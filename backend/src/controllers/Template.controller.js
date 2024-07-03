@@ -25,5 +25,16 @@ export default class TemplateController {
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
-};
+  };
+
+  deleteTemplate = async (req, res) => {
+    const id = req.body.id;
+    try {
+      const template = await this.#templateService.deleteTemplate(id);
+      res.status(200).send({ message: template });
+    } catch (error) {
+      res.status(400).send({ message: error.message });
+    }
+  };
+
 }
