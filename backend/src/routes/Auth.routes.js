@@ -20,6 +20,7 @@ export default class AuthRoutes {
     this.#router.post("/login", this.#controller.login);
     this.#router.get("/:user", this.#controller.getUser);
     this.#router.put("/", this.#controller.updateUser);
+    this.#router.delete("/", this.#controller.deleteUser);
     // this.#router.put("/:user", this.#authMiddleware.verify, this.#controller.updateUser);
   };
 

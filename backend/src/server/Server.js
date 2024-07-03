@@ -30,7 +30,10 @@ export default class Server {
       })
     );
     this.#app.use(express.json());
-    this.#app.use(this.#router.getRouteStartPoint(), this.#router.getRouter());
+
+    this.#router.getRouter().forEach((router) => {
+      this.#app.use(router.getRouteStartPoint(), router.getRouter());
+    });
   }
 
   close() {

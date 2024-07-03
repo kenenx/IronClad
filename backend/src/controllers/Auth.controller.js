@@ -8,7 +8,7 @@ export default class AuthController {
   }
 
   register = async (req, res) => {
-    const { username, password, } = req.body;
+    const { username, password } = req.body;
     try {
       const user = await this.#authService.register({ username, password });
       res
@@ -29,7 +29,7 @@ export default class AuthController {
         .status(200)
         .send({ message: `Login successful`, user });
     } catch (error) {
-      res.status(401).send({ message: error.message});
+      res.status(401).send({ message: error.message });
     }
   };
 
@@ -49,6 +49,16 @@ export default class AuthController {
       const data = req.body;
       const user = await this.#authService.updateUser(username, data);
       res.status(200).send({ user });
+    } catch (error) {
+      res.status(400).send({ message: error.message });
+    }
+  };
+
+  deleteUser = async (req, res) => {
+    try {
+      const username = req.body.username;
+      const user = await this.#authService.deleteUser(username);
+      res.status(200).send({ message: `${user} deleted` });
     } catch (error) {
       res.status(400).send({ message: error.message });
     }

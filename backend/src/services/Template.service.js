@@ -1,0 +1,24 @@
+import Template from '../models/Template.model.js';
+
+export default class TemplateService {
+  createTemplate = async (data) => {
+    try {
+      const template = new Template(data);
+      await template.save();
+      return template;
+    } catch (error) {
+      throw new Error("Template creation failed", error.message);
+    }
+  };
+
+  updateTemplate = async (id, templateData) => {
+    try {
+      const template = await Template.findByIdAndUpdate(id, templateData, {
+        new: true,
+      });
+      return template;
+    } catch (e) {
+      throw new Error(e);
+    }
+  };
+}
