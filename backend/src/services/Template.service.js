@@ -30,4 +30,23 @@ export default class TemplateService {
       throw new Error(e);
     }
   };
+
+  getTemplate = async (id) => {
+    try {
+      const template = await Template.findById(id);
+      return template;
+    } catch (e) {
+      throw new Error(e);
+    }
+  }
+
+  getTemplates = async () => {
+    try {
+      const templates = await Template.find();
+      return templates;
+    } catch (e) {
+      throw new Error(e);
+    }
+  }
+
 }

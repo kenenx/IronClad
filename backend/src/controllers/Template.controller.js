@@ -37,4 +37,23 @@ export default class TemplateController {
     }
   };
 
+  getTemplate = async (req, res) => {
+    const id = req.params.id;
+    try {
+      const template = await this.#templateService.getTemplate(id);
+      res.status(200).json(template);
+    } catch (error) {
+      res.status(400).json({ error: error.message });
+    }
+  };
+
+  getTemplates = async (req, res) => {
+    try {
+      const templates = await this.#templateService.getTemplates();
+      res.status(200).json(templates);
+    } catch (error) {
+      res.status(400).json({ error: error.message });
+    }
+  };
+
 }
