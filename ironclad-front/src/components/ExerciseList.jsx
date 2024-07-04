@@ -2,6 +2,8 @@ import React from "react";
 import ExerciseCard from "./ExerciseCard"; 
 
 const ExerciseList = ({ exercises }) => {
+
+  
   return (
     <>
       {exercises.map((exercise, index) => (

@@ -16,6 +16,17 @@ const Exercise = ({ exercise }) => {
           <span>Reps: {exercise.reps}</span>
           <span>Weight: {exercise.weight}kg</span>
         </div>
+        {location.pathname === "/workout" && (
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              padding: "1rem",
+            }}
+          >
+            <input type="checkbox" /> Completed
+          </div>
+        )}
       </Card.Body>
     </Card>
   );

@@ -70,3 +70,15 @@ h3 {
 form div {
   margin-bottom: 15px;
 }
+
+.content-container {
+  background-image: url('background2.jpg');
+  background-size: cover;
+  /* Cover the entire container */
+  background-position: center;
+  /* Center the background image */
+  background-repeat: no-repeat;
+  /* Do not repeat the image */
+  height: 100vh;
+  /* Optional: Set to the full height of the viewport */
+}

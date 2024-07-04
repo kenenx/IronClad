@@ -36,10 +36,10 @@ function CompleteWorkout() {
     }
   }
 
-
-
-
-
+  const handleDelete = () => {
+    localStorage.removeItem("templateId");
+    navigate("/home");
+  }
 
   return (
     <>
@@ -70,7 +70,10 @@ function CompleteWorkout() {
 
               <div className="row">
                 <div className="col-auto mx-auto mt-5">
-                  <button className="btn btn-danger mb-3">
+                  <button
+                    className="btn btn-danger mb-3"
+                    onClick={handleDelete}
+                  >
                     Delete Workout
                   </button>
                 </div>
