@@ -23,5 +23,14 @@ export const login = async (username, password) => {
     } catch (error) {
       throw new Error(error);
     }
+}
+  
+export const updateUser = async (data) => {
+  try {
+    const response = await axios.put(`${URL}/auth/`, data);
+    return response.data;
+  } catch (error) {
+    throw new Error(error);
   }
+}
 

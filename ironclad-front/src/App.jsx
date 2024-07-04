@@ -8,6 +8,8 @@ import Template from "./pages/Template";
 import Workout from "./pages/Workout";
 import CompleteWorkout from "./pages/CompleteWorkout";
 import History from "./pages/History";
+import NavBar from "./components/NavBar";
+import Profile from "./pages/Profile";
 
 function App() {
   return (
@@ -20,7 +22,10 @@ function App() {
         <Route path="/workout" element={<Workout />} />
         <Route path="/complete-workout" element={<CompleteWorkout />} />
         <Route path="/history/" element={<History />} />
+        <Route path="/profile/" element={<Profile />} />
+
       </Routes>
+      <NavBar />
     </>
   );
 }

@@ -31,7 +31,6 @@ function CompleteWorkout() {
     event.preventDefault();
     try {
       const data = await createWorkout({ user: userId, name : workout.name, exercises : workout.exercises, rpe });
-      console.log(data);
       navigate("/home");
     } catch (error) {
       console.error(error);

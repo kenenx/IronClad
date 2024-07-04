@@ -5,7 +5,7 @@ import User from "../models/User.model.js";
 export default class AuthService {
   register = async ({ username, password }) => {
     try {
-      const hashedPassword = await bcrypt.hash(password, 10)
+      const hashedPassword = await bcrypt.hash(password, 10);
       const user = new User({ username, password: hashedPassword });
       await user.save();
       const accessToken = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
@@ -13,7 +13,7 @@ export default class AuthService {
     } catch (error) {
       throw new Error("Registration failed", error.message);
     }
-  }
+  };
 
   login = async ({ username, password }) => {
     try {
@@ -26,7 +26,7 @@ export default class AuthService {
     } catch (error) {
       throw new Error("Login failed", error.message);
     }
-  }
+  };
 
   getUser = async (username) => {
     try {
@@ -35,26 +35,30 @@ export default class AuthService {
     } catch (e) {
       throw new Error(e);
     }
-  }
+  };
 
   updateUser = async (username, data) => {
     try {
-      console.log(username, data);
+      console.log(`Updating user: ${username} with data:`, data);
       const user = await User.findOneAndUpdate({ username }, data, {
         new: true,
       });
+      if (!user) {
+        console.log(`No user found with username: ${username}`);
+      }
       return user;
     } catch (e) {
+      console.error(`Error updating user: ${e}`);
       throw new Error(e);
     }
-  }
+  };
 
   deleteUser = async (username) => {
     try {
       const user = await User.findOneAndDelete({ username });
-      return `${user} has been deleted`;
+      return `${username} has been deleted`;
     } catch (e) {
       throw new Error(e);
     }
-  }
+  };
 }
