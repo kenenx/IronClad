@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import { Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import LogIn from "./pages/LogIn";
@@ -12,9 +13,13 @@ import NavBar from "./components/NavBar";
 import Profile from "./pages/Profile";
 import PreviousWorkout from "./pages/PreviousWorkout";
 import GenerateWorkout from "./pages/GenerateWorkout";
+
+import "./App.css";
+
+
 function App() {
   return (
-    <>
+    <Container fluid className="content-container">
       <Routes>
         <Route path="/" element={<LogIn />} />
         <Route path="/register" element={<Register />} />
@@ -26,11 +31,9 @@ function App() {
         <Route path="/profile/" element={<Profile />} />
         <Route path="/workout/:id" element={<PreviousWorkout />} />
         <Route path="/generate-workout" element={<GenerateWorkout />} />
-
-
       </Routes>
-      <NavBar />
-    </>
+      <NavBar className="fixed-bottom" />
+    </Container>
   );
 }
 

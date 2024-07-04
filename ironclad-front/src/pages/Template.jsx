@@ -36,20 +36,26 @@ const Workout = () => {
 
   const { exercises = [] } = workout;
 
-  return (
-    <Container>
-      <h1 className="text-center">{workout.name}</h1>
-      <ExerciseList exercises={exercises} />
 
-      <Button
-        variant="primary"
-        size="lg"
-        className="w-100 mt-4"
-        onClick={handleStartWorkout}
-      >
-        Start Workout
-      </Button>
-    </Container>
+  return (
+    <>
+      <Container>
+        <div>
+          <h1 className="text-center mt-3">{workout.name}</h1>
+          <ExerciseList exercises={exercises} />
+
+          <Button
+            variant="secondary"
+            size="lg"
+            className="w-100 mt-4 mb-3"
+            onClick={handleStartWorkout}
+          >
+            Start Workout
+          </Button>
+        </div>
+      </Container>
+      <div style={{ height: "200px" }}></div>
+    </>
   );
 };
 

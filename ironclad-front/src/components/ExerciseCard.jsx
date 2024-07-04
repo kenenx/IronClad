@@ -2,7 +2,7 @@ import Card from "react-bootstrap/Card";
 
 const Exercise = ({ exercise }) => {
   return (
-    <Card>
+    <Card style={{ margin: "1rem", borderRadius: "0" }}>
       <Card.Body>
         <Card.Title>{exercise.name}</Card.Title>
         <div

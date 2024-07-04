@@ -25,7 +25,6 @@ const UserForm = () => {
     try {
       const updatedFormData = { ...formData, username };
       const data = await updateUser(updatedFormData);
-      console.log(data);
     } catch (error) {
       console.error(error);
     }
@@ -73,7 +72,7 @@ const UserForm = () => {
                 <option value="advanced">Advanced</option>
               </select>
             </div>
-            <button type="submit" className="btn btn-primary w-100">
+            <button type="submit" className="btn btn-dark w-100">
               Submit
             </button>
           </form>

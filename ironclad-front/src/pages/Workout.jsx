@@ -14,7 +14,6 @@ function Workout() {
   const [loading, setLoading] = useState(true);
   const id = localStorage.getItem('templateId');
   const navigate = useNavigate();
-  console.log(id);
 
   useEffect(() => {
     const fetchWorkout = async () => {
@@ -42,14 +41,22 @@ function Workout() {
   }
 
     return (
-      <Container>
-        <h1 className="text-center">{workout.name}</h1>
-        <ExerciseList exercises={exercises} />
+      <div className="pt-3">
+        <Container>
+          <h1 className="text-center pt-8">{workout.name}</h1>
+          <ExerciseList exercises={exercises} />
 
-        <Button variant="primary" size="lg" className="w-100 mt-4" onClick={handleFinishWorkout}>
-          Finish Workout
-        </Button>
-      </Container>
+          <Button
+            variant="secondary"
+            size="lg"
+            className="w-100 mt-4 mb-4"
+            onClick={handleFinishWorkout}
+          >
+            Finish Workout
+          </Button>
+        </Container>
+        <div style={{ height: "200px" }}></div>
+      </div>
     );
   };
 

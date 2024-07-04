@@ -18,7 +18,7 @@ const Register = () => {
     try {
       const data = await register(username, password);
       alert("Registration successful!");
-      navigate("/login");
+      navigate("/");
     } catch (error) {
       console.error(error);
     }

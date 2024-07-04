@@ -34,3 +34,11 @@ export const updateUser = async (data) => {
   }
 }
 
+export const deleteUser = async (username) => {
+  try {
+    const response = await axios.delete(`${URL}/auth/`, username);
+    return response.data;
+  } catch (error) {
+    throw new Error(error);
+  }
+}

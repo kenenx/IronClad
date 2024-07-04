@@ -1,0 +1,72 @@
+.main-content {
+  padding-bottom: 56px;
+  /* Adjust based on the height of your navbar */
+}
+
+:root {
+  --background-color: #FFFFFF;
+  --text-color: #2C3E50;
+  --navbar-color: #BDC3C7;
+  --button-color: #E74C3C;
+  --link-color: #C0392B;
+  --highlight-color: #EC7063;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: var(--navbar-color);
+  padding: 10px;
+}
+
+footer {
+  background-color: var(--navbar-color);
+  padding: 10px;
+  text-align: center;
+}
+
+nav {
+  background-color: var(--navbar-color);
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav a {
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+button {
+  background-color: var(--button-color);
+  color: var(--background-color);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin: 10px 0;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: var(--link-color);
+}
+
+.highlight {
+  color: var(--highlight-color);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--text-color);
+}
+
+form div {
+  margin-bottom: 15px;
+}

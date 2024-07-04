@@ -1,9 +1,15 @@
-import { Navbar, Nav } from "react-bootstrap";
+import { useLocation } from "react-router-dom"; //
 
 const NavBar = () => {
+  const location = useLocation();
+
+  if (location.pathname === "/") {
+    return <></>;
+  }
+
   return (
     <>
-      <nav className="navbar navbar-light bg-light">
+      <nav className="navbar navbar-light bg-light sticky-bottom">
         <div className="d-flex justify-content-around w-100">
           <a href="/profile" className="nav-link">
             Profile

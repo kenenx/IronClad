@@ -19,7 +19,6 @@ function CompleteWorkout() {
       try {
         const data = await getTemplate({ id });
         setWorkout(data);
-        console.log(workout);
       } catch (error) {
         console.error(error);
       }
@@ -43,41 +42,45 @@ function CompleteWorkout() {
 
 
   return (
-    <div className="container d-flex justify-content-center">
-      <div className="row">
-        <div className="col-12 col-md-6 col-lg-4 mx-auto">
-          <h1 className="text-center mb-3">Complete Workout?</h1>
-          <div className="mb-3">
-            <label htmlFor="rpe" className="form-label">
-              RPE (1-10)
-            </label>
-            <input
-              type="number"
-              id="rpe"
-              className="form-control"
-              min="1"
-              max="10"
-              step="1"
-              value={rpe}
-              onChange={(event) => setRpe(event.target.value)}
-            />
-          </div>
-          <div className="d-grid gap-2 mb-2">
-            <Button variant="primary" size="lg" onClick={handleSubmit}>
-              Submit
-            </Button>
+    <>
+      <div className="container d-flex justify-content-center mt-5">
+        <div className="row">
+          <div className="col-12 col-md-6 col-lg-4 mx-auto">
+            <h1 className="text-center mb-3 mt-3">Complete Workout?</h1>
+            <div className="mb-3 text-center">
+              <label htmlFor="rpe" className="form-label">
+                RPE
+              </label>
+              <input
+                type="number"
+                id="rpe"
+                className="form-control"
+                min="1"
+                max="10"
+                step="1"
+                value={rpe}
+                placeholder="Enter RPE (1-10)"
+                onChange={(event) => setRpe(event.target.value)}
+              />
+            </div>
+            <div className="d-grid gap-2 mb-2">
+              <Button variant="secondary" size="lg" onClick={handleSubmit}>
+                Submit
+              </Button>
 
-            <div className="row">
-              <div className="col-auto mx-auto mt-5">
-                <Button variant="danger" size="sm">
-                  Delete
-                </Button>
+              <div className="row">
+                <div className="col-auto mx-auto mt-5">
+                  <button className="btn btn-danger mb-3">
+                    Delete Workout
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+      <div style={{ height: "500px" }}></div>
+    </>
   );
 }
 

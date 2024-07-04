@@ -25,49 +25,62 @@ const LogIn = () => {
   };
 
   return (
-    <div
-      className="container d-flex align-items-center justify-content-center"
-      style={{ minHeight: "100vh" }}
-    >
-      <div className="row">
-        <div className="col-md-10 offset-md-3">
-          <form onSubmit={handleSubmit}>
-            <div className="mb-3">
-              <label htmlFor="username" className="form-label">
-                Username
-              </label>
-              <input
-                type="text"
-                id="username"
-                className="form-control"
-                value={username}
-                onChange={(event) => setUsername(event.target.value)}
-                autoComplete="username"
-              />
+    <>
+      <h1 className="text-center mt-5">Welcome to IronClad</h1>
+      <div className="text-center">
+        <img
+          className="m-5"
+          src="favicon.jpg"
+          alt="IronClad Logo"
+          style={{ maxWidth: "50%", height: "auto" }}
+        />
+        <p>Please Log In</p>
+      </div>
+
+      <div
+        className="container d-flex align-items-center justify-content-center"
+        style={{ minHeight: "50vh" }}
+      >
+        <div className="row">
+          <div className="col-md-10 offset-md-3">
+            <form onSubmit={handleSubmit}>
+              <div className="mb-3">
+                <label htmlFor="username" className="form-label">
+                  Username
+                </label>
+                <input
+                  type="text"
+                  id="username"
+                  className="form-control"
+                  value={username}
+                  onChange={(event) => setUsername(event.target.value)}
+                  autoComplete="username"
+                />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="password" className="form-label">
+                  Password
+                </label>
+                <input
+                  type="password"
+                  id="password"
+                  className="form-control"
+                  value={password}
+                  onChange={(event) => setPassword(event.target.value)}
+                  autoComplete="current-password"
+                />
+              </div>
+              <button type="submit" className="btn btn-secondary w-100">
+                Log In
+              </button>
+            </form>
+            <div className="text-center mt-3">
+              <NavLink to="/register">Don't have an Account?</NavLink>
             </div>
-            <div className="mb-3">
-              <label htmlFor="password" className="form-label">
-                Password
-              </label>
-              <input
-                type="password"
-                id="password"
-                className="form-control"
-                value={password}
-                onChange={(event) => setPassword(event.target.value)}
-                autoComplete="current-password"
-              />
-            </div>
-            <button type="submit" className="btn btn-primary w-100">
-              Log In
-            </button>
-          </form>
-          <div className="text-center mt-3">
-            <NavLink to="/register">Don't have an Account?</NavLink>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

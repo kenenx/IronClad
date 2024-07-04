@@ -8,7 +8,7 @@ const TemplateCard = ({ template }) => {
       to={`/template/${template._id}`}
       style={{ textDecoration: "none", color: "inherit" }}
     >
-      <Card style={{ borderRadius: "2px" }}>
+      <Card style={{ borderRadius: "2px", margin: "0.5rem" }}>
         <Card.Img variant="top" src={template.image} />
         <Card.Body className="text-center">
           <Card.Title>{template.name}</Card.Title>

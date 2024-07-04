@@ -27,12 +27,20 @@ const History = () => {
   }, [userId]);
 
   return (
-    <div>
+    <div className="content-container mt-3">
+      <h3 className="text-center m-3">Workout History</h3>
       {loading ? (
         <p>Loading...</p>
       ) : (
-        history.map((item, index) => <HistoryCard key={index} workout={item} />)
+        [...history]
+          .sort((a, b) => new Date(b.date) - new Date(a.date)) //
+          .map((item, index) => (
+            <div key={index} className="mb-3">
+              <HistoryCard workout={item} />
+            </div>
+          ))
       )}
+      <div style={{ height: "500px" }}></div>
     </div>
   );
 }

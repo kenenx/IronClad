@@ -32,10 +32,14 @@ const PreviousWorkout = () => {
   const { exercises = [] } = workout;
 
   return (
-    <Container>
-      <h1 className="text-center">{workout.name}</h1>
-      <ExerciseList exercises={exercises} />
-    </Container>
+    <div className="mt-4">
+      <Container>
+        <h1 className="text-center">{workout.name}</h1>
+        <ExerciseList exercises={exercises} />
+        <h2 className="text-center">RPE : {workout.rpe}</h2>
+      </Container>
+      <div style={{ height: "200px" }}></div>
+    </div>
   );
 };
 
