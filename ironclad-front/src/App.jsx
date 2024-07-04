@@ -10,7 +10,8 @@ import CompleteWorkout from "./pages/CompleteWorkout";
 import History from "./pages/History";
 import NavBar from "./components/NavBar";
 import Profile from "./pages/Profile";
-
+import PreviousWorkout from "./pages/PreviousWorkout";
+import GenerateWorkout from "./pages/GenerateWorkout";
 function App() {
   return (
     <>
@@ -23,6 +24,9 @@ function App() {
         <Route path="/complete-workout" element={<CompleteWorkout />} />
         <Route path="/history/" element={<History />} />
         <Route path="/profile/" element={<Profile />} />
+        <Route path="/workout/:id" element={<PreviousWorkout />} />
+        <Route path="/generate-workout" element={<GenerateWorkout />} />
+
 
       </Routes>
       <NavBar />

@@ -31,6 +31,7 @@ const UserForm = () => {
     }
   };
 
+
   return (
     <div className="container d-flex align-items-center justify-content-center mt-4">
       <div className="row">
@@ -67,7 +68,6 @@ const UserForm = () => {
                 onChange={handleChange}
                 className="form-select"
               >
-                <option value="">Select Level</option>
                 <option value="beginner">Beginner</option>
                 <option value="intermediate">Intermediate</option>
                 <option value="advanced">Advanced</option>

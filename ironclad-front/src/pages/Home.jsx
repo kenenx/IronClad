@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 
 import Button from "react-bootstrap/Button";
 import TemplateCard from "../components/TemplateCard";
@@ -26,13 +27,12 @@ function Home() {
 
   return (
     <>
-      <div className="d-grid gap-2 m-2 p-2">
-        {/* <Button variant="primary" size="lg">
-          Start an empty workout
-        </Button> */}
-        <Button variant="secondary" size="lg">
-          Generate a workout for me
-        </Button>
+      <div className="d-flex justify-content-center gap-2 m-2 p-2">
+        <NavLink to="/generate-workout">
+          <Button variant="secondary" size="lg">
+            Generate a workout for me
+          </Button>
+        </NavLink>
       </div>
       {!loading && (
         <div>

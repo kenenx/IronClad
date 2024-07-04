@@ -1,4 +1,5 @@
 import { Card } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 
 const HistoryCard = ({ workout }) => {
 
@@ -9,12 +10,14 @@ const HistoryCard = ({ workout }) => {
   });
 
   return (
-    <Card style={{ borderRadius: "2px" }}>
-      <Card.Body className="text-center">
-        <Card.Title>{workout.name}</Card.Title>
-        <Card.Text>{formattedDate}</Card.Text>
-      </Card.Body>
-    </Card>
+    <NavLink to={`/workout/${workout._id}`} style={{ textDecoration: "none" }}>
+      <Card style={{ borderRadius: "2px" }}>
+        <Card.Body className="text-center">
+          <Card.Title>{workout.name}</Card.Title>
+          <Card.Text>{formattedDate}</Card.Text>
+        </Card.Body>
+      </Card>
+    </NavLink>
   );
 };
 

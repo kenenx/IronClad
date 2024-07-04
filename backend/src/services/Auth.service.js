@@ -39,7 +39,6 @@ export default class AuthService {
 
   updateUser = async (username, data) => {
     try {
-      console.log(`Updating user: ${username} with data:`, data);
       const user = await User.findOneAndUpdate({ username }, data, {
         new: true,
       });

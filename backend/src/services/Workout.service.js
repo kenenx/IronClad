@@ -44,6 +44,7 @@ export default class WorkoutService {
 
   getUserWorkouts = async (userId) => {
     try {
+      console.log(userId);
       const workouts = await Workout.find({ user: userId });
       return workouts;
     } catch (e) {

@@ -18,7 +18,6 @@ const History = () => {
       try {
         const data = await getUserWorkouts({ userId });
         setHistory(data);
-        console.log(data);
         setLoading(false);
       } catch (error) {
         console.error(error);

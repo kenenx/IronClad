@@ -20,3 +20,12 @@ export const getUserWorkouts = async (userId) => {
     throw new Error(error);
   }
 }
+
+export const getWorkout = async (workoutId) => {
+  try {
+    const response = await axios.get(`${URL}/workout/${workoutId.id}`);
+    return response.data;
+  } catch (error) {
+    throw new Error(error);
+  }
+}
