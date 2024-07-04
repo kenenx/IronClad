@@ -7,6 +7,10 @@ const WorkoutSchema = new Schema(
       ref: "User",
       required: true,
     },
+    name: {
+      type: String,
+      required: true,
+    },
     date: {
       type: Date,
       required: true,

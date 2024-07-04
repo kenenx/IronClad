@@ -18,7 +18,7 @@ const LogIn = () => {
       localStorage.setItem("userId", data.user.user._id);
       localStorage.setItem("accessToken", data.user.accessToken);
       alert("Login successful!");
-      // navigate("/home");
+      navigate("/home");
     } catch (error) {
       console.error(error);
     }

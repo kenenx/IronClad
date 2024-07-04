@@ -10,3 +10,12 @@ export const getTemplates = async () => {
     throw new Error(error);
   }
 }
+
+export const getTemplate = async (id) => {
+  try {
+    const response = await axios.get(`${URL}/template/${id.id}`);;
+    return response.data;
+  } catch (error) {
+    throw new Error(error);
+  }
+}

@@ -4,14 +4,22 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import LogIn from "./pages/LogIn";
 import Register from "./pages/Register";
 import Home from "./pages/Home";
+import Template from "./pages/Template";
+import Workout from "./pages/Workout";
+import CompleteWorkout from "./pages/CompleteWorkout";
+import History from "./pages/History";
 
 function App() {
   return (
     <>
       <Routes>
-        <Route path="/login" element={<LogIn />} />
+        <Route path="/" element={<LogIn />} />
         <Route path="/register" element={<Register />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/template/:id" element={<Template />} />
+        <Route path="/workout" element={<Workout />} />
+        <Route path="/complete-workout" element={<CompleteWorkout />} />
+        <Route path="/history/" element={<History />} />
       </Routes>
     </>
   );

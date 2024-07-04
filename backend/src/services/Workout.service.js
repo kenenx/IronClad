@@ -2,7 +2,7 @@ import Workout from '../models/Workout.model.js';
 
 export default class WorkoutService {
   createWorkout = async (data) => {
-    console.log(data , "service");
+
     try {
       const workout = new Workout(data);
       await workout.save();

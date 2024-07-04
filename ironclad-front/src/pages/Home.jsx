@@ -26,29 +26,24 @@ function Home() {
 
   return (
     <>
-      <div className="d-grid gap-2">
-        <Button variant="primary" size="lg">
+      <div className="d-grid gap-2 m-2 p-2">
+        {/* <Button variant="primary" size="lg">
           Start an empty workout
-        </Button>
+        </Button> */}
         <Button variant="secondary" size="lg">
           Generate a workout for me
         </Button>
       </div>
       {!loading && (
         <div>
-          <h1>Templates</h1>
-          <div className="row">
-            {" "}
-            {/* Add this line */}
+          <h1 className="text-center">Templates</h1>
+          <div className="row m-2 p-2">
             {templates.map((template, index) => (
               <div key={index} className="col-6">
-                {" "}
-                {/* Update this line */}
                 <TemplateCard key={template.id} template={template} />
               </div>
             ))}
-          </div>{" "}
-          {/* Add this line */}
+          </div>
         </div>
       )}
     </>
