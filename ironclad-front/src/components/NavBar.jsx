@@ -9,7 +9,7 @@ const NavBar = () => {
 
   return (
     <>
-      <nav className="navbar navbar-light bg-light sticky-bottom">
+      <nav className="navbar navbar-light bg-light sticky-bottom mb-3">
         <div className="d-flex justify-content-around w-100">
           <a href="/profile" className="nav-link">
             Profile
